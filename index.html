@@ -1,60 +1,344 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lê Quang Huy - Front-End Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #0B0F19; /* Deep dark blue/black */
+      --bg-card: #131A2A;
+      --bg-card-hover: #1C263B;
+      --text-main: #E2E8F0; /* Light grayish blue */
+      --text-muted: #94A3B8;
+      --accent: #38BDF8; /* Light blue accent */
+      --accent-glow: rgba(56, 189, 248, 0.4);
+      --border: #1E293B;
+      --radius: 12px;
+    }
 
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-sans); }
-.portfolio { max-width: 720px; margin: 0 auto; padding: 2rem 1rem; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background-color: var(--bg-main); 
+      color: var(--text-main); 
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05), transparent 25%);
+      min-height: 100vh;
+    }
 
-.hero { text-align: center; padding: 2.5rem 0 2rem; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 2rem; }
-.avatar { width: 72px; height: 72px; border-radius: 50%; background: #CECBF6; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500; color: #3C3489; margin: 0 auto 1rem; }
-.hero h1 { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
-.hero .role { font-size: 15px; color: var(--color-text-secondary); margin-bottom: 1rem; }
-.badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 1.2rem; }
-.badge { font-size: 12px; padding: 4px 10px; border-radius: var(--border-radius-md); background: #EEEDFE; color: #3C3489; }
-.contacts { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.contacts a { font-size: 13px; color: var(--color-text-info); text-decoration: none; }
+    ::selection { background: var(--accent); color: #0B0F19; }
 
-.section { margin-bottom: 2rem; }
-.section-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 1rem; padding-bottom: 8px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+    .portfolio { 
+      max-width: 800px; 
+      margin: 0 auto; 
+      padding: 4rem 1.5rem; 
+      animation: fadeIn 0.8s ease-out;
+    }
 
-.about-text { font-size: 14px; line-height: 1.7; color: var(--color-text-secondary); }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
-.skill-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; }
-.skill-cat { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 4px; }
-.skill-list { font-size: 13px; color: var(--color-text-primary); line-height: 1.5; }
+    .hero { 
+      text-align: center; 
+      padding-bottom: 2.5rem; 
+      border-bottom: 1px solid var(--border); 
+      margin-bottom: 3rem; 
+    }
+    
+    .avatar { 
+      width: 90px; 
+      height: 90px; 
+      border-radius: 50%; 
+      background: linear-gradient(135deg, #38BDF8, #8B5CF6);
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 28px; 
+      font-weight: 700; 
+      color: #fff; 
+      margin: 0 auto 1.5rem; 
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.timeline { display: flex; flex-direction: column; gap: 12px; }
-.tl-item { display: flex; gap: 12px; }
-.tl-dot { width: 8px; height: 8px; border-radius: 50%; background: #7F77DD; margin-top: 6px; flex-shrink: 0; }
-.tl-content { flex: 1; }
-.tl-date { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 2px; }
-.tl-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
-.tl-sub { font-size: 13px; color: var(--color-text-secondary); }
+    .avatar:hover {
+      transform: scale(1.05) rotate(-5deg);
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+    }
+    
+    .hero h1 { 
+      font-size: 32px; 
+      font-weight: 700; 
+      margin-bottom: 8px; 
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #E2E8F0, #94A3B8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero .role { 
+      font-size: 18px; 
+      color: var(--accent); 
+      margin-bottom: 1.5rem; 
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    
+    .badges { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+      justify-content: center; 
+      margin-bottom: 1.5rem; 
+    }
+    
+    .badge { 
+      font-size: 13px; 
+      font-weight: 500;
+      padding: 6px 14px; 
+      border-radius: 20px; 
+      background: rgba(56, 189, 248, 0.1); 
+      color: var(--accent); 
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
 
-.projects { display: flex; flex-direction: column; gap: 12px; }
-.proj-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
-.proj-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-.proj-name { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
-.proj-links { display: flex; gap: 10px; }
-.proj-links a { font-size: 12px; color: var(--color-text-info); text-decoration: none; }
-.proj-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 10px; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.proj-tag { font-size: 11px; padding: 3px 8px; border-radius: var(--border-radius-md); background: #E1F5EE; color: #0F6E56; }
+    .badge:hover {
+      background: rgba(56, 189, 248, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(56, 189, 248, 0.2);
+    }
+    
+    .contacts { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .contacts a, .contacts span { 
+      font-size: 14px; 
+      color: var(--text-muted); 
+      text-decoration: none; 
+      transition: color 0.3s ease;
+    }
+    .contacts a:hover { color: var(--accent); }
+    
+    .section { 
+      margin-bottom: 3.5rem; 
+      animation: slideUp 0.8s ease-out backwards;
+    }
+    
+    .section:nth-child(2) { animation-delay: 0.1s; }
+    .section:nth-child(3) { animation-delay: 0.2s; }
+    .section:nth-child(4) { animation-delay: 0.3s; }
+    .section:nth-child(5) { animation-delay: 0.4s; }
+    .section:nth-child(6) { animation-delay: 0.5s; }
 
-.edu-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 16px; }
-.edu-school { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
-.edu-detail { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
-.gpa-badge { display: inline-block; font-size: 12px; padding: 2px 8px; background: #FAEEDA; color: #633806; border-radius: var(--border-radius-md); margin-top: 6px; }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-.footer { text-align: center; padding-top: 1.5rem; border-top: 0.5px solid var(--color-border-tertiary); font-size: 12px; color: var(--color-text-tertiary); }
-</style>
+    .section-title { 
+      font-size: 13px; 
+      font-weight: 600; 
+      letter-spacing: 0.1em; 
+      text-transform: uppercase; 
+      color: var(--text-main); 
+      margin-bottom: 1.5rem; 
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(to right, var(--border), transparent);
+    }
+    
+    .about-text { 
+      font-size: 16px; 
+      color: var(--text-muted); 
+      background: var(--bg-card);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: border-color 0.3s ease;
+    }
+    .about-text:hover { border-color: rgba(56, 189, 248, 0.3); }
+    
+    .skills-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+      gap: 16px; 
+    }
+    
+    .skill-card { 
+      background: var(--bg-card); 
+      border: 1px solid var(--border);
+      border-radius: var(--radius); 
+      padding: 16px; 
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+      background: var(--bg-card-hover);
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .skill-cat { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+    .skill-list { font-size: 14px; color: var(--text-main); }
+    
+    .timeline { display: flex; flex-direction: column; gap: 24px; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: var(--border);
+    }
+    .tl-item { display: flex; gap: 20px; position: relative; }
+    .tl-dot { 
+      width: 16px; 
+      height: 16px; 
+      border-radius: 50%; 
+      background: var(--bg-main); 
+      border: 3px solid var(--accent);
+      margin-top: 4px; 
+      flex-shrink: 0; 
+      z-index: 1;
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+    .tl-content { 
+      flex: 1; 
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      transition: all 0.3s ease;
+    }
+    .tl-content:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: scale(1.02);
+    }
+    .tl-date { font-size: 13px; color: var(--accent); margin-bottom: 6px; font-weight: 500; }
+    .tl-title { font-size: 18px; font-weight: 600; color: var(--text-main); margin-bottom: 8px; }
+    .tl-sub { font-size: 15px; color: var(--text-muted); }
+    
+    .projects { display: flex; flex-direction: column; gap: 20px; }
+    .proj-card { 
+      background: var(--bg-card); 
+      border: 1px solid var(--border); 
+      border-radius: var(--radius); 
+      padding: 1.5rem; 
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    .proj-card:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .proj-card:hover::before {
+      transform: translateX(100%);
+    }
+    
+    .proj-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .proj-name { font-size: 18px; font-weight: 600; color: var(--text-main); }
+    .proj-links { display: flex; gap: 16px; }
+    .proj-links a { 
+      font-size: 14px; 
+      color: var(--accent); 
+      text-decoration: none; 
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: opacity 0.3s ease;
+    }
+    .proj-links a:hover { opacity: 0.8; text-decoration: underline; }
+    
+    .proj-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 16px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .proj-tag { 
+      font-size: 12px; 
+      padding: 4px 10px; 
+      border-radius: 6px; 
+      background: rgba(148, 163, 184, 0.1); 
+      color: var(--text-muted); 
+    }
+    
+    .edu-card { 
+      background: var(--bg-card); 
+      border: 1px solid var(--border);
+      border-radius: var(--radius); 
+      padding: 1.5rem; 
+      transition: border-color 0.3s ease;
+    }
+    .edu-card:hover { border-color: rgba(56, 189, 248, 0.3); }
+    .edu-school { font-size: 18px; font-weight: 600; color: var(--text-main); }
+    .edu-detail { font-size: 15px; color: var(--text-muted); margin-top: 6px; }
+    .gpa-badge { 
+      display: inline-block; 
+      font-size: 13px; 
+      font-weight: 500;
+      padding: 4px 10px; 
+      background: rgba(139, 92, 246, 0.1); 
+      color: #C4B5FD; 
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 6px; 
+      margin-top: 12px; 
+    }
+    
+    .footer { 
+      text-align: center; 
+      padding-top: 2rem; 
+      border-top: 1px solid var(--border); 
+      font-size: 14px; 
+      color: var(--text-muted); 
+      margin-top: 4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .portfolio { padding: 2rem 1rem; }
+      .hero h1 { font-size: 28px; }
+      .tl-item { flex-direction: column; gap: 10px; }
+      .tl-dot { display: none; }
+      .timeline::before { display: none; }
+      .tl-content { padding: 1.25rem; }
+      .proj-header { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
 
 <div class="portfolio">
 
   <div class="hero">
     <div class="avatar">LQH</div>
     <h1>Lê Quang Huy</h1>
-    <p class="role">Front-End Developer — Fresher</p>
+    <div class="role">Front-End Developer — Fresher</div>
     <div class="badges">
       <span class="badge">ReactJS</span>
       <span class="badge">NextJS</span>
@@ -64,53 +348,55 @@ body { font-family: var(--font-sans); }
     </div>
     <div class="contacts">
       <a href="mailto:quanghuyy0106@gmail.com">quanghuyy0106@gmail.com</a>
-      <span style="color:var(--color-text-tertiary)">·</span>
+      <span>·</span>
       <a href="https://github.com/QH0106" target="_blank">GitHub</a>
-      <span style="color:var(--color-text-tertiary)">·</span>
-      <span style="font-size:13px;color:var(--color-text-secondary)">0332 231 599</span>
+      <span>·</span>
+      <span>0332 231 599</span>
     </div>
   </div>
 
   <div class="section">
-    <p class="section-title">Giới thiệu</p>
-    <p class="about-text">Front-End Developer fresher với nền tảng vững về HTML, CSS, JavaScript, ReactJS và các UI framework như Bootstrap, Tailwind. Có kinh nghiệm xây dựng giao diện responsive và làm việc nhóm thực tế qua internship tại TMA Solutions. Mục tiêu phát triển thành Junior Front-End Developer với kỹ năng giải quyết vấn đề tốt và code sạch, dễ bảo trì.</p>
+    <div class="section-title">Giới thiệu</div>
+    <div class="about-text">
+      Front-End Developer fresher với nền tảng vững về HTML, CSS, JavaScript, ReactJS và các UI framework như Bootstrap, Tailwind. Có kinh nghiệm xây dựng giao diện responsive và làm việc nhóm thực tế qua internship tại TMA Solutions. Mục tiêu phát triển thành Junior Front-End Developer với kỹ năng giải quyết vấn đề tốt và code sạch, dễ bảo trì.
+    </div>
   </div>
 
   <div class="section">
-    <p class="section-title">Kỹ năng kỹ thuật</p>
+    <div class="section-title">Kỹ năng kỹ thuật</div>
     <div class="skills-grid">
       <div class="skill-card">
-        <p class="skill-cat">Front-end</p>
-        <p class="skill-list">ReactJS, NextJS, HTML, CSS, JS, TypeScript</p>
+        <div class="skill-cat">Front-end</div>
+        <div class="skill-list">ReactJS, NextJS, HTML, CSS, JS, TypeScript</div>
       </div>
       <div class="skill-card">
-        <p class="skill-cat">UI Framework</p>
-        <p class="skill-list">Bootstrap, Tailwind CSS, MUI</p>
+        <div class="skill-cat">UI Framework</div>
+        <div class="skill-list">Bootstrap, Tailwind CSS, MUI</div>
       </div>
       <div class="skill-card">
-        <p class="skill-cat">Tools</p>
-        <p class="skill-list">Git, GitHub, Jira, Figma, Postman</p>
+        <div class="skill-cat">Tools</div>
+        <div class="skill-list">Git, GitHub, Jira, Figma, Postman</div>
       </div>
       <div class="skill-card">
-        <p class="skill-cat">Khác</p>
-        <p class="skill-list">Agile/Scrum, REST API, OOP cơ bản</p>
+        <div class="skill-cat">Khác</div>
+        <div class="skill-list">Agile/Scrum, REST API, OOP cơ bản</div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <p class="section-title">Dự án</p>
+    <div class="section-title">Dự án</div>
     <div class="projects">
 
       <div class="proj-card">
         <div class="proj-header">
-          <span class="proj-name">Nemthangloi Website</span>
+          <div class="proj-name">Nemthangloi Website</div>
           <div class="proj-links">
-            <a href="https://nemthangloivn.vn" target="_blank">Live</a>
-            <a href="https://github.com/QH0106/nemthangloi_FE.git" target="_blank">GitHub</a>
+            <a href="https://nemthangloivn.vn" target="_blank">Live ↗</a>
+            <a href="https://github.com/QH0106/nemthangloi_FE.git" target="_blank">GitHub ↗</a>
           </div>
         </div>
-        <p class="proj-desc">Nền tảng thương mại điện tử bán nệm với admin dashboard quản lý đơn hàng, tích hợp thanh toán COD và QR MoMo. Tối ưu UX với state persistence và smooth interactions.</p>
+        <div class="proj-desc">Nền tảng thương mại điện tử bán nệm với admin dashboard quản lý đơn hàng, tích hợp thanh toán COD và QR MoMo. Tối ưu UX với state persistence và smooth interactions.</div>
         <div class="proj-tags">
           <span class="proj-tag">ReactJS</span>
           <span class="proj-tag">MUI</span>
@@ -121,12 +407,12 @@ body { font-family: var(--font-sans); }
 
       <div class="proj-card">
         <div class="proj-header">
-          <span class="proj-name">Computer E-commerce Website</span>
+          <div class="proj-name">Computer E-commerce Website</div>
           <div class="proj-links">
-            <a href="https://github.com/QH0106/E-commerce-Website.git" target="_blank">GitHub</a>
+            <a href="https://github.com/QH0106/E-commerce-Website.git" target="_blank">GitHub ↗</a>
           </div>
         </div>
-        <p class="proj-desc">Sàn thương mại điện tử sản phẩm máy tính với giỏ hàng, theo dõi đơn hàng real-time, thanh toán QR Sepay/COD và admin dashboard với báo cáo doanh thu.</p>
+        <div class="proj-desc">Sàn thương mại điện tử sản phẩm máy tính với giỏ hàng, theo dõi đơn hàng real-time, thanh toán QR Sepay/COD và admin dashboard với báo cáo doanh thu.</div>
         <div class="proj-tags">
           <span class="proj-tag">ReactJS</span>
           <span class="proj-tag">Bootstrap</span>
@@ -140,30 +426,33 @@ body { font-family: var(--font-sans); }
   </div>
 
   <div class="section">
-    <p class="section-title">Kinh nghiệm</p>
+    <div class="section-title">Kinh nghiệm</div>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-content">
-          <p class="tl-date">02/2025 – 05/2025</p>
-          <p class="tl-title">Front-End Intern — TMA Solutions, Bình Định</p>
-          <p class="tl-sub">Làm việc trong nhóm Agile/Scrum, sử dụng Jira quản lý sprint. Thực hành ReactJS, JavaScript, RESTful API. Fix bug, viết unit test, quản lý code với Git/GitHub.</p>
+          <div class="tl-date">02/2025 – 05/2025</div>
+          <div class="tl-title">Front-End Intern — TMA Solutions, Bình Định</div>
+          <div class="tl-sub">Làm việc trong nhóm Agile/Scrum, sử dụng Jira quản lý sprint. Thực hành ReactJS, JavaScript, RESTful API. Fix bug, viết unit test, quản lý code với Git/GitHub.</div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <p class="section-title">Học vấn</p>
+    <div class="section-title">Học vấn</div>
     <div class="edu-card">
-      <p class="edu-school">Đại học Mở Hà Nội</p>
-      <p class="edu-detail">Công nghệ Thông tin · 09/2022 – 06/2025</p>
-      <span class="gpa-badge">GPA 7.37/10</span>
+      <div class="edu-school">Đại học Mở Hà Nội</div>
+      <div class="edu-detail">Công nghệ Thông tin · 09/2022 – 06/2025</div>
+      <div class="gpa-badge">GPA 7.37/10</div>
     </div>
   </div>
 
   <div class="footer">
-    <p>Quy Nhơn Tây, Gia Lai, Việt Nam · quanghuyy0106@gmail.com · 0332 231 599</p>
+    Quy Nhơn Tây, Gia Lai, Việt Nam · <a href="mailto:quanghuyy0106@gmail.com" style="color:var(--text-muted);text-decoration:none;">quanghuyy0106@gmail.com</a> · 0332 231 599
   </div>
 
 </div>
+
+</body>
+</html>

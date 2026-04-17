@@ -1,0 +1,169 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.portfolio { max-width: 720px; margin: 0 auto; padding: 2rem 1rem; }
+
+.hero { text-align: center; padding: 2.5rem 0 2rem; border-bottom: 0.5px solid var(--color-border-tertiary); margin-bottom: 2rem; }
+.avatar { width: 72px; height: 72px; border-radius: 50%; background: #CECBF6; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 500; color: #3C3489; margin: 0 auto 1rem; }
+.hero h1 { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.hero .role { font-size: 15px; color: var(--color-text-secondary); margin-bottom: 1rem; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 1.2rem; }
+.badge { font-size: 12px; padding: 4px 10px; border-radius: var(--border-radius-md); background: #EEEDFE; color: #3C3489; }
+.contacts { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.contacts a { font-size: 13px; color: var(--color-text-info); text-decoration: none; }
+
+.section { margin-bottom: 2rem; }
+.section-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 1rem; padding-bottom: 8px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+
+.about-text { font-size: 14px; line-height: 1.7; color: var(--color-text-secondary); }
+
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+.skill-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; }
+.skill-cat { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 4px; }
+.skill-list { font-size: 13px; color: var(--color-text-primary); line-height: 1.5; }
+
+.timeline { display: flex; flex-direction: column; gap: 12px; }
+.tl-item { display: flex; gap: 12px; }
+.tl-dot { width: 8px; height: 8px; border-radius: 50%; background: #7F77DD; margin-top: 6px; flex-shrink: 0; }
+.tl-content { flex: 1; }
+.tl-date { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 2px; }
+.tl-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); }
+.tl-sub { font-size: 13px; color: var(--color-text-secondary); }
+
+.projects { display: flex; flex-direction: column; gap: 12px; }
+.proj-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
+.proj-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.proj-name { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+.proj-links { display: flex; gap: 10px; }
+.proj-links a { font-size: 12px; color: var(--color-text-info); text-decoration: none; }
+.proj-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 10px; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.proj-tag { font-size: 11px; padding: 3px 8px; border-radius: var(--border-radius-md); background: #E1F5EE; color: #0F6E56; }
+
+.edu-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 16px; }
+.edu-school { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+.edu-detail { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+.gpa-badge { display: inline-block; font-size: 12px; padding: 2px 8px; background: #FAEEDA; color: #633806; border-radius: var(--border-radius-md); margin-top: 6px; }
+
+.footer { text-align: center; padding-top: 1.5rem; border-top: 0.5px solid var(--color-border-tertiary); font-size: 12px; color: var(--color-text-tertiary); }
+</style>
+
+<div class="portfolio">
+
+  <div class="hero">
+    <div class="avatar">LQH</div>
+    <h1>Lê Quang Huy</h1>
+    <p class="role">Front-End Developer — Fresher</p>
+    <div class="badges">
+      <span class="badge">ReactJS</span>
+      <span class="badge">NextJS</span>
+      <span class="badge">TypeScript</span>
+      <span class="badge">Tailwind CSS</span>
+      <span class="badge">MUI</span>
+    </div>
+    <div class="contacts">
+      <a href="mailto:quanghuyy0106@gmail.com">quanghuyy0106@gmail.com</a>
+      <span style="color:var(--color-text-tertiary)">·</span>
+      <a href="https://github.com/QH0106" target="_blank">GitHub</a>
+      <span style="color:var(--color-text-tertiary)">·</span>
+      <span style="font-size:13px;color:var(--color-text-secondary)">0332 231 599</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Giới thiệu</p>
+    <p class="about-text">Front-End Developer fresher với nền tảng vững về HTML, CSS, JavaScript, ReactJS và các UI framework như Bootstrap, Tailwind. Có kinh nghiệm xây dựng giao diện responsive và làm việc nhóm thực tế qua internship tại TMA Solutions. Mục tiêu phát triển thành Junior Front-End Developer với kỹ năng giải quyết vấn đề tốt và code sạch, dễ bảo trì.</p>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Kỹ năng kỹ thuật</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <p class="skill-cat">Front-end</p>
+        <p class="skill-list">ReactJS, NextJS, HTML, CSS, JS, TypeScript</p>
+      </div>
+      <div class="skill-card">
+        <p class="skill-cat">UI Framework</p>
+        <p class="skill-list">Bootstrap, Tailwind CSS, MUI</p>
+      </div>
+      <div class="skill-card">
+        <p class="skill-cat">Tools</p>
+        <p class="skill-list">Git, GitHub, Jira, Figma, Postman</p>
+      </div>
+      <div class="skill-card">
+        <p class="skill-cat">Khác</p>
+        <p class="skill-list">Agile/Scrum, REST API, OOP cơ bản</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Dự án</p>
+    <div class="projects">
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <span class="proj-name">Nemthangloi Website</span>
+          <div class="proj-links">
+            <a href="https://nemthangloivn.vn" target="_blank">Live</a>
+            <a href="https://github.com/QH0106/nemthangloi_FE.git" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <p class="proj-desc">Nền tảng thương mại điện tử bán nệm với admin dashboard quản lý đơn hàng, tích hợp thanh toán COD và QR MoMo. Tối ưu UX với state persistence và smooth interactions.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">ReactJS</span>
+          <span class="proj-tag">MUI</span>
+          <span class="proj-tag">RESTful API</span>
+          <span class="proj-tag">11/2025 – 03/2026</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-header">
+          <span class="proj-name">Computer E-commerce Website</span>
+          <div class="proj-links">
+            <a href="https://github.com/QH0106/E-commerce-Website.git" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <p class="proj-desc">Sàn thương mại điện tử sản phẩm máy tính với giỏ hàng, theo dõi đơn hàng real-time, thanh toán QR Sepay/COD và admin dashboard với báo cáo doanh thu.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">ReactJS</span>
+          <span class="proj-tag">Bootstrap</span>
+          <span class="proj-tag">Tailwind CSS</span>
+          <span class="proj-tag">RESTful API</span>
+          <span class="proj-tag">03/2025 – 05/2025</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Kinh nghiệm</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <p class="tl-date">02/2025 – 05/2025</p>
+          <p class="tl-title">Front-End Intern — TMA Solutions, Bình Định</p>
+          <p class="tl-sub">Làm việc trong nhóm Agile/Scrum, sử dụng Jira quản lý sprint. Thực hành ReactJS, JavaScript, RESTful API. Fix bug, viết unit test, quản lý code với Git/GitHub.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Học vấn</p>
+    <div class="edu-card">
+      <p class="edu-school">Đại học Mở Hà Nội</p>
+      <p class="edu-detail">Công nghệ Thông tin · 09/2022 – 06/2025</p>
+      <span class="gpa-badge">GPA 7.37/10</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Quy Nhơn Tây, Gia Lai, Việt Nam · quanghuyy0106@gmail.com · 0332 231 599</p>
+  </div>
+
+</div>
